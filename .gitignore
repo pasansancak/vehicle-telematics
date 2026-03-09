@@ -1,0 +1,7 @@
+data/allcars.csv
+data/*.csv
+.venv-1/
+venv/
+.DS_Store
+__pycache__/
+*.pyc
