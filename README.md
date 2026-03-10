@@ -93,17 +93,17 @@ A CatBoost regression model trained to predict fuel efficiency (kpl) from OBD se
 
 ### Predicted vs Actual
 
-![07_predicted_vs_actual](outputs/07_predicted_vs_actual.png)
+![06_predicted_vs_actual](outputs/06_predicted_vs_actual.png)
 
 ### Per-Vehicle Predictions
 
-![08_per_vehicle_predictions](outputs/08_per_vehicle_predictions.png)
+![07_per_vehicle_predictions](outputs/07_per_vehicle_predictions.png)
 
 ### Feature Importance
 
 > `est_gear` (engineered from RPM/speed via KMeans) and `tPos` together account for ~38% of predictive power — consistent with ECU injection logic where gear selection and throttle demand are the primary determinants of fuel injection quantity.
 
-![09_feature_importance](outputs/09_feature_importance.png)
+![08_feature_importance](outputs/08_feature_importance.png)
 
 ---
 
@@ -126,9 +126,9 @@ vehicle-telematics/
 │   ├── 02_eda.ipynb               ← sensor distributions, temporal patterns
 │   ├── 03_gear_estimation.ipynb   ← KMeans gear estimation per vehicle
 │   ├── 04_speed_efficiency.ipynb  ← speed zones, fleet fuel summary
-│   └── 05_fuel_model.ipynb        ← CatBoost model, predictions, importance
+│   └── 05_fuel_efficiency_model.ipynb  ← CatBoost model, predictions, importance
 ├── src/
-│   └── features.py                ← shared utility functions (cleaning, gear estimation, feature engineering)
+│   └── features.py                ← shared utility functions
 ├── outputs/                       ← all generated charts
 ├── data/
 │   └── processed/
