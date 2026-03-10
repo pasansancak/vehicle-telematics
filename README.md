@@ -103,7 +103,7 @@ This project uses the **LEVIN Vehicle Telematics** dataset published by Yun Solu
 
 ## 🛠️ Tech Stack
 
-- **Python 3.10** — Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn
+- **Python 3.13.11** — Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn
 - **Jupyter Notebook**
 - **KMeans Clustering** — per-vehicle gear estimation
 - **OBD Signal Processing** — speed/RPM/KPL/engine load
