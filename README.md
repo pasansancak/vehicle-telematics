@@ -22,17 +22,26 @@ Real-world OBD sensor data from a 16-vehicle fleet analyzed to identify optimal 
 ### 1. Sensor Distributions
 Cleaned and validated 6 OBD sensors: speed, RPM, engine load, fuel efficiency (kpl), coolant temperature, and throttle position. Identified and removed GPS speed outliers (up to 512 km/h), KPL spikes, and corrupted header rows embedded in the raw CSV.
 
+<img width="2376" height="1365" alt="01_sensor_distributions" src="https://github.com/user-attachments/assets/d14352ee-8e5c-47d4-a6bd-bef16c1b41b8" />
+
 ### 2. Temporal Patterns
 - Median speed drops significantly during rush hours (07:00–09:00 and 17:00–20:00)
 - Trip distribution is relatively even across weekdays with a slight dip on Sundays
 
+<img width="2226" height="725" alt="02_temporal_patterns" src="https://github.com/user-attachments/assets/2d5c5635-2181-4673-9595-3bf86827f492" />
+
 ### 3. Speed-Efficiency Map (per vehicle)
 Grouped all readings into 12 speed zones (0–10, 10–20, … 120+ km/h) and calculated average fuel efficiency per zone per vehicle.
+
+<img width="2695" height="1821" alt="03_speed_efficiency_map" src="https://github.com/user-attachments/assets/7b43b1f5-d19a-420c-bc6a-e1f72842c58c" />
+<img width="1891" height="870" alt="03b_fleet_heatmap" src="https://github.com/user-attachments/assets/aead891f-75b8-4486-8dd8-04b0783af8d3" />
 
 **Key finding:** Fleet-wide optimal speed zone is **60–90 km/h** — vehicles operating in this range show up to 40% higher fuel efficiency compared to low-speed urban driving below 30 km/h.
 
 ### 4. Fleet Fuel Consumption Summary
 Calculated total distance, total fuel consumed, and overall km/L per vehicle using time-series integration (speed × time delta).
+
+<img width="2676" height="911" alt="04_fleet_fuel_summary" src="https://github.com/user-attachments/assets/129f70ce-d67b-40b0-aacd-8f63f39cabeb" />
 
 | | Vehicle |
 |---|---|
@@ -42,6 +51,8 @@ Calculated total distance, total fuel consumed, and overall km/L per vehicle usi
 
 ### 5. Gear Estimation (per vehicle)
 Since no gear sensor exists in OBD data, gear was estimated using:
+
+<img width="2675" height="1838" alt="05_gear_analysis" src="https://github.com/user-attachments/assets/9c8df59e-25be-4178-9256-434e10f4a096" />
 
 ```
 gear_ratio = RPM / speed
